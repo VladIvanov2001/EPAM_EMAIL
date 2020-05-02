@@ -1,0 +1,35 @@
+Deadline 03.03
+
+//1. git ssh
+//2. gitignore
+//3. training.by registration
+//4. git link (task)
+//5. Dto pattern (read)
+//6. REST (read)
+//7. SOLID (read)
+
+Deadline 06.03
+
+1.Simple Maven project
+2.layered architecture
+3.log4j / log4j2
+	прописать как maven dependency
+	вывод warning и error
+	остальное в консоль напечатать
+(
+Deadline 10.03
+
+1. Project structure
+2. logger (log4j / log4j2)
+
+Deadline 13.03
+
+1. Console application
+2. CRUD - operations
+)?
+
+
+
+
+
+intellij idea plugin *ignore
