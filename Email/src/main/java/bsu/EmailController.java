@@ -15,18 +15,14 @@ public class EmailController extends HttpServlet {
     private String host;
     private String port;
     private String user;
-    private String password;
+    private String pass;
 
     public void init() {
         ServletContext context = getServletContext();
         this.host = context.getInitParameter("host");
         this.port = context.getInitParameter("port");
         this.user = context.getInitParameter("user");
-        this.password = context.getInitParameter("pass");
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        this.pass = context.getInitParameter("pass");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,7 +33,7 @@ public class EmailController extends HttpServlet {
         String resultMessage = "";
 
         try {
-            EmailSender.sendEmail(host, port, user, password, recipient, subject, content);
+            EmailSender.sendEmail(host, port, user, pass, recipient, subject, content);
             resultMessage = "The e-mail was sent successfully";
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -48,4 +44,7 @@ public class EmailController extends HttpServlet {
         }
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
 }
