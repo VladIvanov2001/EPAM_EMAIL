@@ -12,5 +12,8 @@
     <h3><%=request.getAttribute("Message")%></h3>
     <h3>Your email is sended</h3>
 </center>
+<form action="controller" method="get">
+    <input type="submit" value="Send Again"/>
+</form>
 </body>
 </html>

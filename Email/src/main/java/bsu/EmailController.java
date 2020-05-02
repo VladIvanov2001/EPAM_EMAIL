@@ -25,6 +25,10 @@ public class EmailController extends HttpServlet {
         this.password = context.getInitParameter("pass");
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String recipient = request.getParameter("recipient");
         String subject = request.getParameter("subject");
@@ -43,4 +47,5 @@ public class EmailController extends HttpServlet {
             request.getRequestDispatcher("pages/main.jsp").forward(request, response);
         }
     }
+
 }
