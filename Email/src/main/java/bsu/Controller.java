@@ -1,6 +1,6 @@
 package bsu;
 
-import bsu.emailUtils.EmailSender;
+import bsu.utile.EmailSender;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "EmailController", urlPatterns = {"/controller"})
-public class EmailController extends HttpServlet {
+@WebServlet(name = "Controller", urlPatterns = {"/controller"})
+public class Controller extends HttpServlet {
     private String host;
     private String port;
     private String user;

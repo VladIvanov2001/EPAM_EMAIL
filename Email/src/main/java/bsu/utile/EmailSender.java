@@ -1,4 +1,4 @@
-package bsu.emailUtils;
+package bsu.utile;
 
 import java.util.Date;
 import java.util.Properties;
