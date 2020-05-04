@@ -13,8 +13,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class EmailSender {
-    public static void sendEmail(String host, String port,
-                                 final String userName, final String password, String toAddress,
+    public void sendEmail(String host, String port, String userName,  String password, String toAddress,
                                  String subject, String message) throws  MessagingException {
 
         Properties properties = new Properties();
