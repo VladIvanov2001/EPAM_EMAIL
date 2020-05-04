@@ -18,14 +18,12 @@ public class EmailSender {
                                  final String userName, final String password, String toAddress,
                                  String subject, String message) throws  MessagingException {
 
-        // sets SMTP server properties
         Properties properties = new Properties();
         properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.port", port);
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
 
-        // creates a new session with an authenticator
         Authenticator auth = new Authenticator() {
             public PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(userName, password);
@@ -34,7 +32,6 @@ public class EmailSender {
 
         Session session = Session.getInstance(properties, auth);
 
-        // creates a new e-mail message
         Message msg = new MimeMessage(session);
 
         msg.setFrom(new InternetAddress(userName));
@@ -44,8 +41,11 @@ public class EmailSender {
         msg.setSentDate(new Date());
         msg.setText(message);
 
-        // sends the e-mail
-        Transport.send(msg);
+        try {
+            Transport.send(msg);
+        }catch (MessagingException e){
+            e.printStackTrace();
+        }
 
     }
 }
